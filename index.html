@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MEU GRAVE — músicas personalizadas com a identidade do Senta no Grave.">
+  <meta name="theme-color" content="#f4005b">
+  <meta property="og:title" content="MEU GRAVE — Sua história. Seu grave.">
+  <meta property="og:description" content="Peça uma música personalizada para seu carro, sua família, sua empresa ou um momento especial.">
+  <meta property="og:type" content="website">
+  <title>MEU GRAVE — Senta no Grave</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><span class="crown">♛</span><div>MEU GRAVE<small>Senta no Grave</small></div></div>
+      <nav class="nav">
+        <a href="#pacotes">Pacotes</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#pedido" class="btn small">Criar meu grave</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="kicker">Produção Senta no Grave</div>
+          <h1 class="display">Sua história.<br><span class="pink">Seu grave.</span></h1>
+          <p class="lead">Uma música original para seu carro, sua mãe, sua namorada, seu amigo, sua empresa ou qualquer momento que mereça virar som.</p>
+          <div class="hero-actions">
+            <a class="btn pink" href="#pedido">Quero meu grave</a>
+            <a class="btn light" href="#pacotes">Ver pacotes</a>
+          </div>
+          <div class="impact-rule">Você escolhe a história. <span>Nós criamos o grave.</span></div>
+        </div>
+        <div class="speaker-stage" aria-label="Ilustração de um subwoofer">
+          <div class="speaker"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pacotes">
+      <div class="shell">
+        <div class="kicker">Escolha o nível de impacto</div>
+        <h2 class="section-title">Pacotes <span class="pink">MEU GRAVE</span></h2>
+        <p class="section-subtitle">Valores promocionais de lançamento. Todos os pedidos passam por análise antes do pagamento.</p>
+        <div class="cards" id="packageCards"><div class="empty">Carregando pacotes...</div></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="como-funciona">
+      <div class="shell">
+        <div class="kicker">Processo manual e transparente</div>
+        <h2 class="section-title">Como <span class="pink">funciona</span></h2>
+        <div class="steps">
+          <div class="step"><h3>Você envia a ideia</h3><p>Preencha o formulário com nomes, história, ocasião, frases e fotos opcionais.</p></div>
+          <div class="step"><h3>Análise de conteúdo</h3><p>O pedido é analisado manualmente. Conteúdo inadequado pode ser recusado.</p></div>
+          <div class="step"><h3>Pagamento</h3><p>Após aprovação, você recebe por e-mail a chave Pix e responde com o comprovante.</p></div>
+          <div class="step"><h3>Aprovação da letra</h3><p>Quando houver letra, você confere nomes, fatos e frases antes da produção musical.</p></div>
+          <div class="step"><h3>Produção e entrega</h3><p>Os arquivos são enviados por e-mail e Google Drive. No Pacote Completo, você também recebe uma página exclusiva com sua produção.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pedido">
+      <div class="shell">
+        <div class="kicker">Conte sua história</div>
+        <h2 class="section-title">Crie o <span class="pink">seu grave</span></h2>
+        <div class="form-wrap">
+          <aside class="panel dark-panel" id="orderIntroPanel">
+            <h3 style="font-family:Impact;font-size:34px;margin-top:0;text-transform:uppercase">Antes de enviar</h3>
+            <div class="notice dark-notice">
+              O envio do pedido não gera cobrança automática. Alan analisa o conteúdo e decide manualmente se a produção será aceita.
+            </div>
+            <p><strong>O cliente aprova:</strong> nomes, história, fatos, frases e letra.</p>
+            <p><strong>O MEU GRAVE define:</strong> melodia, voz, batida, arranjo, interpretação e estrutura.</p>
+            <p>O pacote inclui uma rodada de ajustes objetivos na letra. Refazer a música por preferência pessoal não está incluído.</p>
+          </aside>
+
+          <form class="panel" id="orderForm">
+            <div class="grid-2">
+              <div class="field">
+                <label>Nome *</label>
+                <input name="customerName" required maxlength="120">
+              </div>
+              <div class="field">
+                <label>E-mail *</label>
+                <input name="customerEmail" type="email" required maxlength="254">
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label>WhatsApp</label>
+                <input name="customerPhone" inputmode="tel" maxlength="40" placeholder="(DDD) número">
+              </div>
+              <div class="field">
+                <label>Serviço *</label>
+                <select name="packageId" id="packageSelect" required>
+                  <option value="">Carregando...</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="coupon-box">
+              <label><strong>Tem um cupom de desconto?</strong></label>
+              <div class="coupon-row">
+                <input id="couponCode" name="couponCode" maxlength="40" placeholder="Digite seu cupom">
+                <button class="btn light small" type="button" id="applyCouponButton">Aplicar cupom</button>
+              </div>
+              <div id="couponStatus" class="status hidden"></div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label>Para quem ou para o que é a música?</label>
+                <select name="subjectType">
+                  <option value="Carro ou projeto automotivo">Carro ou projeto automotivo</option>
+                  <option value="Namorada, namorado ou companheiro">Namorada, namorado ou companheiro</option>
+                  <option value="Mãe, pai ou familiar">Mãe, pai ou familiar</option>
+                  <option value="Amigo ou grupo">Amigo ou grupo</option>
+                  <option value="Aniversário ou homenagem">Aniversário ou homenagem</option>
+                  <option value="Empresa, loja ou equipe">Empresa, loja ou equipe</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Nome principal ou título do projeto</label>
+                <input name="subjectName" maxlength="160" placeholder="Pessoa, carro, empresa ou projeto">
+                <label class="check" style="margin-top:10px">
+                  <input type="checkbox" name="useSubjectNameInLyrics">
+                  <span>Quero que esse nome apareça na letra.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label>Ocasião</label>
+                <input name="occasion" maxlength="160" placeholder="Aniversário, presente, teste de som...">
+              </div>
+              <div class="field">
+                <label>Clima desejado</label>
+                <input name="mood" maxlength="500" placeholder="Pesado, emocionante, divertido, romântico...">
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Conte a história e explique a música *</label>
+              <textarea name="story" required maxlength="6000" placeholder="Conte quem é a pessoa, como vocês se conheceram, detalhes do carro, momentos importantes e tudo que não pode ser inventado."></textarea>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label>Frases ou palavras obrigatórias</label>
+                <textarea name="requiredPhrases" maxlength="1500"></textarea>
+              </div>
+              <div class="field">
+                <label>Palavras ou assuntos que devem ser evitados</label>
+                <textarea name="avoidTerms" maxlength="1500"></textarea>
+              </div>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" name="hasOwnLyrics">
+              <span>Já tenho uma letra ou parte da letra.</span>
+            </label>
+
+            <div class="field">
+              <label>Letra enviada pelo cliente</label>
+              <textarea name="lyricsSubmitted" maxlength="12000" placeholder="Cole aqui, caso tenha. Ela poderá ser ajustada para produção."></textarea>
+            </div>
+
+            <div class="field">
+              <label>Arquivo com a letra (opcional, até 5 MB)</label>
+              <input type="file" name="lyricsFile" accept=".txt,.pdf,.doc,.docx,text/plain,application/pdf">
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label>Foto 1 (opcional, até 5 MB)</label>
+                <input type="file" name="photo1" accept="image/*">
+              </div>
+              <div class="field">
+                <label>Foto 2 (opcional, até 5 MB)</label>
+                <input type="file" name="photo2" accept="image/*">
+              </div>
+            </div>
+            <div class="field">
+              <label>Foto 3 (opcional, até 5 MB)</label>
+              <input type="file" name="photo3" accept="image/*">
+            </div>
+
+
+            <div id="exclusivePageFields" class="panel hidden" style="margin:24px 0;background:#fff7fb;border-color:#f4005b">
+              <div class="kicker">Somente no Pacote Completo</div>
+              <h3 style="font-family:Impact;font-size:34px;margin:0 0 10px;text-transform:uppercase">Página exclusiva e divulgação</h3>
+              <div class="public-link-warning"><strong>Atenção:</strong> esta página será pública por link. Qualquer pessoa que receber o endereço poderá visualizar a música, letra, fotos, vídeo, contador, redes sociais e contatos publicados.</div><p>Use os campos abaixo para personalizar a página de uma pessoa, projeto, empresa, loja ou canal.</p>
+              <div class="grid-2">
+                <div class="field">
+                  <label>Título público da página</label>
+                  <input name="exclusivePageTitle" maxlength="160" placeholder="Nome da empresa, projeto, carro ou homenagem">
+                </div>
+                <div class="field">
+                  <label>Apresentação pública</label>
+                  <textarea name="exclusivePageDescription" maxlength="1200" placeholder="Texto curto sobre a pessoa, empresa, projeto ou produção."></textarea>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="field"><label>Instagram</label><input name="publicInstagram" maxlength="500" placeholder="https://instagram.com/..."></div>
+                <div class="field"><label>YouTube</label><input name="publicYoutube" maxlength="500" placeholder="https://youtube.com/@..."></div>
+                <div class="field"><label>TikTok</label><input name="publicTiktok" maxlength="500" placeholder="https://tiktok.com/@..."></div>
+                <div class="field"><label>Facebook</label><input name="publicFacebook" maxlength="500" placeholder="https://facebook.com/..."></div>
+                <div class="field"><label>X</label><input name="publicX" maxlength="500" placeholder="https://x.com/..."></div>
+                <div class="field"><label>Site</label><input name="publicWebsite" maxlength="500" placeholder="https://seusite.com.br"></div>
+              </div>
+              <div class="field">
+                <label>WhatsApp público</label>
+                <input name="publicWhatsapp" maxlength="200" placeholder="5524999999999 ou link wa.me">
+                <small>Use somente um contato que possa ser exibido publicamente.</small>
+              </div>
+              <div class="grid-2">
+                <div class="field"><label>Descrição da data especial (opcional)</label><input name="specialDateLabel" maxlength="120" placeholder="Ex.: Nascimento da Manuela"></div>
+                <div class="field"><label>Data especial (opcional)</label><input type="date" name="specialDate"><small>A página calculará automaticamente o tempo desde essa data.</small></div>
+              </div>
+              <label class="check">
+                <input type="checkbox" name="publicPageConsent">
+                <span>Entendo e autorizo que a página exclusiva é pública por link. Qualquer pessoa que receber o endereço poderá visualizar todo o conteúdo publicado nela.</span>
+              </label>
+            </div>
+
+            <div id="channelPublicationFields" class="panel hidden" style="margin:24px 0;background:#f4f7ff;border-color:#111">
+              <div class="kicker">Pacotes com publicação no canal</div>
+              <h3 style="font-family:Impact;font-size:32px;margin:0 0 10px;text-transform:uppercase">Visibilidade do vídeo</h3>
+              <div class="field"><label>Como o vídeo deverá ser publicado no YouTube?</label><select name="youtubeVisibility"><option value="PUBLIC">Público — aparece normalmente no canal</option><option value="UNLISTED">Não listado — somente quem tem o link</option></select><small>O vídeo não listado não aparece publicamente no canal, mas qualquer pessoa com o link poderá assistir. No Pacote Completo, ele poderá ser exibido na página pública por link.</small></div>
+            </div>
+
+            <div class="field">
+              <label>Outras observações</label>
+              <textarea name="notes" maxlength="3000"></textarea>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" name="publicationConsent">
+              <span>Autorizo a publicação do vídeo no canal quando o pacote incluir essa opção, respeitando a visibilidade escolhida acima. A publicação depende de aprovação final.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="photoConsent">
+              <span>Autorizo o uso das fotos enviadas na produção e, quando eu contratar o Pacote Completo, na página exclusiva da música. Declaro possuir autorização para enviá-las.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="termsAccepted" required>
+              <span>Li e aceito que o pedido será analisado antes do pagamento e que conteúdo impróprio poderá ser recusado.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="creativeDirectionAccepted" required>
+              <span>Concordo que melodia, voz, instrumental, batida, arranjo e estrutura serão definidos pela direção criativa do MEU GRAVE.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="revisionPolicyAccepted" required>
+              <span>Entendo que o serviço não inclui refações ilimitadas. A letra possui uma rodada de ajustes objetivos; uma nova música será uma nova contratação.</span>
+            </label>
+
+            <div id="formStatus" class="status hidden"></div>
+            <button class="btn pink" type="submit" id="orderSubmitButton" style="width:100%">Enviar pedido para análise</button>
+          </form>
+
+          <div id="orderSuccess" class="panel order-success hidden" role="status" aria-live="polite">
+            <div class="success-mark">✓</div>
+            <div class="kicker">Pedido enviado com sucesso</div>
+            <h3>Obrigado por escolher o <span class="pink">MEU GRAVE</span></h3>
+            <p id="orderSuccessMessage" class="lead" style="font-size:19px"></p>
+            <div class="notice">
+              Seu pedido será analisado manualmente. Retornaremos pelo e-mail informado em até <strong>48 horas</strong>.
+              Não realize nenhum pagamento antes de receber a aprovação.
+            </div>
+            <p>Confira também as pastas Spam, Promoções e Lixo eletrônico.</p>
+            <button class="btn light" type="button" onclick="resetOrderForm()">Fazer outro pedido</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="shell">
+        <div class="kicker">Regras claras</div>
+        <h2 class="section-title">Dúvidas <span class="pink">rápidas</span></h2>
+        <details><summary>Posso escolher a melodia e a voz?</summary><p>Você escolhe a história, o clima e os elementos obrigatórios. A direção musical é definida pelo MEU GRAVE dentro da identidade do Senta no Grave.</p></details>
+        <details><summary>Posso pedir outra música se não gostar?</summary><p>Não há refações ilimitadas por preferência pessoal. Erros objetivos da produção são corrigidos. Outra melodia, voz, estilo ou reconstrução completa será uma nova produção.</p></details>
+        <details><summary>Como aprovo a letra?</summary><p>Você recebe um link por e-mail para conferir nomes, fatos e frases. É possível solicitar uma rodada de ajustes antes da aprovação final.</p></details>
+        <details><summary>Como faço o pagamento?</summary><p>Somente depois que o pedido for aprovado. Você recebe a chave Pix por e-mail e responde à mesma mensagem com o comprovante.</p></details>
+        <details><summary>Posso usar a minha música em vídeos?</summary><p>Sim. A versão final é produzida para você e poderá ser usada nos seus vídeos, redes sociais, projetos pessoais ou comerciais e no seu próprio canal. Nos pacotes com publicação no Senta no Grave, você continua podendo usar a música normalmente. Não é permitido revender a produção como serviço nem utilizar materiais de terceiros sem autorização.</p></details>
+        <details><summary>Quem recebe a página exclusiva?</summary><p>A página personalizada é exclusiva do Pacote Completo. Ela pode reunir player, letra, fotos, vídeo, downloads e, quando o cliente autorizar, links de Instagram, YouTube, TikTok, Facebook, X, site e WhatsApp. Nos demais pacotes, os arquivos finais são enviados por e-mail com links do Google Drive.</p></details>
+      </div>
+    </section>
+
+    <section class="section" id="minhas-musicas">
+      <div class="shell panel">
+        <div class="kicker">Já recebeu uma produção?</div>
+        <h2 class="section-title" style="font-size:52px">Minhas <span class="pink">músicas</span></h2>
+        <p>Área exclusiva para clientes do <strong>Pacote Completo</strong>. Informe o e-mail usado no pedido e enviaremos um link temporário para acessar suas páginas personalizadas.</p>
+        <form id="accessForm" class="grid-2">
+          <div class="field" style="margin:0"><input type="email" id="accessEmail" required placeholder="seuemail@exemplo.com"></div>
+          <button class="btn" type="submit">Enviar link de acesso</button>
+        </form>
+        <div id="accessStatus" class="status hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div class="brand"><span class="crown">♛</span><div>MEU GRAVE<small>Uma produção do Senta no Grave</small></div></div>
+      <div><div id="footerContact">Carregando contato...</div><div style="margin-top:10px;font-size:12px"><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos do serviço</a></div></div>
+    </div>
+  </footer>
+
+  <iframe id="bridgeFrame" name="bridgeFrame" class="bridge-frame" title="Envio seguro do formulário"></iframe>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

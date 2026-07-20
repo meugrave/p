@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página exclusiva MEU GRAVE — produção Senta no Grave.">
+  <meta name="theme-color" content="#f4005b">
+  <title>MEU GRAVE — Página exclusiva</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="delivery-public-page">
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><span class="crown">♛</span><div>MEU GRAVE<small>Sua música exclusiva</small></div></div>
+      <a class="btn small" href="./#pedido">Novo Grave</a>
+    </div>
+  </header>
+
+  <main id="deliveryMain">
+    <section class="delivery-hero">
+      <div class="shell">
+        <div class="kicker">Produção Senta no Grave</div>
+        <h1 class="section-title" id="deliveryTitle">Carregando...</h1>
+        <div id="deliveryStatus" class="status">Abrindo sua página...</div>
+        <img id="cover" class="delivery-cover hidden" alt="Capa da música">
+      </div>
+    </section>
+
+    <section id="deliveryContent" class="section hidden">
+      <div class="shell">
+        <div id="exclusiveIntro" class="panel hidden" style="margin-bottom:28px"></div>
+        <div id="specialDateSection" class="special-date-card hidden">
+          <div id="specialDateLabel" class="date-label"></div>
+          <div id="specialDateValue" class="date-value"></div>
+          <div id="specialDateElapsed" class="elapsed-time"></div>
+          <div class="elapsed-caption">de história até hoje</div>
+        </div>
+
+        <div id="audioSection" class="panel hidden">
+          <h2 class="section-title" style="font-size:46px">Ouça o <span class="pink">seu grave</span></h2>
+          <iframe id="audioFrame" class="media-frame" allow="autoplay"></iframe>
+          <p><a id="audioDownload" class="btn pink" target="_blank" rel="noopener">Baixar música</a></p>
+        </div>
+
+        <div id="videoSection" class="panel hidden" style="margin-top:28px">
+          <h2 class="section-title" style="font-size:46px">Assista ao <span class="pink">vídeo</span></h2>
+          <iframe id="videoFrame" class="media-frame" allowfullscreen></iframe>
+          <p id="videoButtons"></p>
+        </div>
+
+        <div id="lyricSection" style="margin-top:28px" class="hidden">
+          <h2 class="section-title" style="font-size:46px">Letra da <span class="pink">música</span></h2>
+          <div id="deliveryLyrics" class="lyrics"></div>
+        </div>
+
+        <div id="gallerySection" style="margin-top:28px" class="hidden">
+          <h2 class="section-title" style="font-size:46px">Fotos da <span class="pink">história</span></h2>
+          <div id="gallery" class="gallery"></div>
+        </div>
+
+        <div id="linksSection" class="panel hidden" style="margin-top:28px">
+          <h2 style="font-family:Impact;font-size:34px;text-transform:uppercase;margin-top:0">Redes, site e contato</h2>
+          <div id="publicationLinks" class="actions"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div class="brand"><span class="crown">♛</span><div>MEU GRAVE<small>Você escolhe a história. Nós criamos o grave.</small></div></div>
+      <a class="btn pink small" href="./#pedido">Criar um Novo Grave</a>
+    </div>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/delivery.js"></script>
+</body>
+</html>
